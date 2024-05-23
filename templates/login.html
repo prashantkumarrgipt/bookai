@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>BookAI</title>
+</head>
+<body>
+    <div id="myModal" class="modal">
+        <div class="modal-content" id="modal-content-addBook">
+            <h3>Enter Information</h3>
+            <!-- <input type="text" id="input1" placeholder="Input 1"><br> -->
+            <input type="text" id="input2" placeholder="write book name.." required><br>
+            <input type="text" id="input3" placeholder="write author name.." required><br>
+            <button id="bookDetailsInput" onclick="submitData()">Submit</button>
+        </div>
+        <div class="modal-content-login" id="modal-content-login">
+            <h3>Sign in with Google</h3>
+            <button id="googleLoginButton" onclick="nowUserLogedIn()" >
+                <a href="/login">
+                    <img src="../static/images/google-Icon.png" alt="" class="googleImage">
+                    Continue with google
+                </a>
+            </button>
+        </div>
+    </div>
+    <div class="leftPart">
+        <div class="addBook">
+            <button class="addBookButton" onclick="openModal()">
+                <img src="../static/images/plus.png" alt="" class="addIcon">
+                <img src="" alt="" class="addIcon">
+                Add new book
+            </button>
+        </div>
+        <div class="bookName" id="bookNameDiv">
+            <div class="bookData">
+                <button class="selectBook" onclick="selectBook('1984', 'George Orwell')">
+                    <div>
+                        <img src="../static/images/bookCover.png" alt="" class="bookImage">
+                    </div>
+                    <div class="author">
+                        <h5 class="">1984</h5>
+                        <h6>George Orwell</h6>
+                    </div>
+                </button>
+            </div>
+            <div class="bookData">
+                <button class="selectBook" onclick="selectBook('The Art of War', 'Sun Tzu')">
+                    <div>
+                        <img src="../static/images/bookCover.png" alt="" class="bookImage">
+                    </div>
+                    <div class="author">
+                        <h5 class="">The Art of War</h5>
+                        <h6>Sun Tzu</h6>
+                    </div>
+                </button>
+            </div>
+            <div class="bookData">
+                <button class="selectBook" onclick="selectBook('Purple Cow', 'Seth Godin')">
+                    <div>
+                        <img src="../static/images/bookCover.png" alt="" class="bookImage">
+                    </div>
+                    <div class="author">
+                        <h5 class="">Purple Cow</h5>
+                        <h6>Seth Godin</h6>
+                    </div>
+                </button>
+            </div>
+            <div class="bookData">
+                <button class="selectBook" onclick="selectBook('The Catcher in the Rye', 'J.D. Salinger')">
+                    <div>
+                        <img src="../static/images/bookCover.png" alt="" class="bookImage">
+                    </div>
+                    <div class="author">
+                        <h5 class="">The Catcher in the Rye</h5>
+                        <h6>J.D. Salinger</h6>
+                    </div>
+                </button>
+            </div>
+        </div>
+        <!-- <div class="bookData">
+            <button class="selectBook" onclick="selectBook()">
+                <div>
+                    <img src="./bookCover.png" alt="" class="bookImage">
+                </div>
+                <div class="author">
+                    <h5 class="">The Art</h5>
+                    <h6>mirza</h6>
+                </div>
+            </button>
+        </div> -->
+        <!-- <div class="signIn">
+            <a href='/login'>
+            <button class="signInButton">
+                <img src="../static/images/log-in.png" alt="" class="signInIcon">
+                Sign in
+            </button>
+            </a>
+        </div> -->
+        <!-- <div class="signIn">
+            {% if 'google_id' in session %}
+                Hello {{ session['name'] }}! <br/>
+                <a href='/logout'><button>Logout</button></a>
+            {% else %}
+                <a href='/login'>
+                    <button class="signInButton">
+                        <img src="../static/images/log-in.png" alt="" class="signInIcon">
+                        Sign in
+                    </button>
+                </a>
+            {% endif %}
+        </div> -->
+        
+            
+        <div class="nowUserLogIn" id="userLogIn">
+            <div class="dropDownData" id="dropDown">
+                <button id="Billing">
+                    <img src="../static/images/icons8-setting-50.png" alt="" id="billingIcon">
+                    Billing
+                </button>
+                <a href="/plan">
+                    <button id="Plans">
+                        <img src="../static/images/icons8-paperwork-64.png" alt="" id="plansIcon">
+                        Plans
+                    </button>
+                </a>
+                <button id="helpCenter">
+                    <img src="../static/images/icons8-help-center-64.png" alt="" id="helpCenterIcon">
+                    Help Center
+                </button>
+                
+                <a href="/logout">
+                    <!-- <button id="logOut" onclick="userLogOut()" > -->
+                    <button id="logOut"  >
+                        <img src="../static/images/icons8-log-out-32.png" alt="" id="logOutIcon">
+                        Log Out
+                    </button>
+                </a>
+                
+            </div>
+            
+            <div class="userGmail" id="userUsername">
+                <img src="../static/images/icons8-user-50.png" alt="" id="userDP">
+                <p id="idName">
+                    
+                        {{ session['name'] }}!
+                    
+                </p>
+                
+                
+                <button id="dropDownButton" onclick="userPressDropDown()" >
+                    <img src="../static/images/icons8-ellipsis-30.png" alt="" id="threeDotIcon">
+                </button>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    <div class="rightPart">
+        <div class="header">
+            <div class="bookDataHeader">
+                <div id="bookDataHeader">
+                    <img src="../static/images/bookCover.png" alt="" class="bookImage" id="bookHeaderImg">
+                </div>
+                <div class="author">
+                    <h5 id="a" class="bookNameHeader"  >Book Name</h5>
+                    <h6 id="b" class="authorHeader" >Author name</h6>
+                </div>
+            </div>
+            <div class="language">
+                Language <br>
+                English
+            </div>
+        </div>         
+        <div class="canvas">
+            <div class="dropDown"></div>
+            <div class="chatting" id="parent">
+                <!-- <div class="userChat">
+                    <img src="./bookCover.png" alt="" class="userImage">
+                    <p class="userQuestion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, perspiciatis.</p>
+                </div>
+                <div class="aiReply">
+                    <img src="./bookCover.png" alt="" class="aiImage">
+                    <p class="aiAnswer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusantium dolores temporibus laborum quisquam nostrum voluptatum sint, facere sequi quo!</p>
+                </div> -->
+            </div>
+            <div id="shortCuts">
+                <div class="shortCut1">
+                    <button class="query1" onclick="querySelect('Provide a summary of the book')" >
+                        <div class="">Provide a summary of the book</div>
+                    </button>
+                    <button class="query2" onclick="querySelect('What is this book about?')" >
+                        <div class="">What is this book about?</div>
+                    </button>
+                </div>
+                <div class="shortCut2">
+                    <button class="query3" onclick="querySelect('What is the main idea of this book?')" >
+                        <div class="">What is the main idea of this book?</div>
+                    </button>
+                    <button class="query4" onclick="querySelect('Explain the ending of the book.')" >
+                        <div class="">Explain the ending of the book.</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="inputBlock">
+            <div class="query">
+                <input type="text" id="textQuery" class="inputText" placeholder="Type your message..">
+                <button id="qButton" class="queryButton">
+                    <img src="../static/images//icons8-send-24.png" alt="" class="sendIcon">
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script defer src="../static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+}
+
+.leftPart {
+    height: 100vh;
+    width: 20%;
+    background: #1d262d;
+    /* padding: 10px; */
+    position: relative;
+}
+
+.rightPart {
+    height: 100vh;
+    width: 80%;
+    background: #2a3742;
+}
+
+.addIcon, .signInIcon {
+    height: 20px;
+    background: white;
+    margin: 2px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.addBook {
+    padding: 10px;
+    background: none;
+    display: flex;
+    /* border-bottom: 1px solid white; */
+    /* border-radius: 4px; */
+    height: 8vh;
+    align-items: center;
+}
+
+
+.addBookButton, .signInButton {
+    color: white;
+    background: none;
+    border: 1px solid rgb(203, 200, 200);
+    align-items: center;
+    display: flex;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    /* text-align: center; */
+}
+
+.bookName {
+    height: 80vh;
+    padding: 10px;
+    overflow-y: auto;
+    /* background-color: aqua; */
+    /* display: none; */
+    /* background: black; */
+}
+
+.bookImage {
+    height: 50px;
+    /* background-color: aqua; */
+}
+
+.bookData, .bookDataHeader {
+    /* background-color: aqua; */
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    /* text-align: center; */
+    padding: 5px;
+    margin: 5px;
+}
+
+.bookDataHeader {
+    align-items: flex-start;
+}
+
+.selectBook {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    /* text-align: left; */
+    background: none;
+    border: none;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+}
+
+h5,h6 {
+    /* background: black; */
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.bookData:hover {
+    background-color: #2a3742;
+}
+
+.addBookButton:hover, .signInButton:hover {
+    background-color: #2a3742;
+}
+
+
+
+.signIn {
+    padding: 10px;
+    background: none;
+    display: flex;
+    border-top: 1px solid rgb(118, 118, 118);
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    /* display: none; */
+    /* margin: 5px; */
+    /* border-radius: 4px; */
+    /* height: 8vh; */
+}
+
+/* .nowUserLogin {
+    background-color: bisque;
+    align-items: center;
+} */
+
+.userGmail {
+    color: white;
+    padding: 10px;
+    background: none;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid rgb(118, 118, 118);
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    height: 60px;
+    /* display: none; */
+}
+
+#threeDotIcon {
+    height: 20px;
+}
+#dropDownButton {
+    height: 30px;
+    width: 30px;
+    border: none;
+    outline: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* border-radius: 100%; */
+}
+#userDP {
+    height: 30px;
+    /* background-color: aqua; */
+
+}
+
+.dropDownData {
+    /* background-color: aqua; */
+    position: absolute;
+    bottom: 80px;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: 5px;
+    margin-right: 10px;
+    width: 95%;
+    align-items: center;
+    padding: 10px;
+    display: none;
+    /* display: block; */
+    /* justify-content: center; */
+}
+#Billing, #Plans, #helpCenter, #logOut {
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 10px;
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    /* margin-bottom: none; */
+    margin: 2px;
+    cursor: pointer;
+    /* display: block; */
+}
+#billingIcon, #plansIcon, #helpCenterIcon, #logOutIcon {
+    width: 20px;
+    margin-right: 15px;
+    /* background-color: aqua; */
+}
+#Billing:hover, #Plans:hover, #helpCenter:hover, #logOut:hover, #dropDownButton:hover {
+    background-color: #2a3742;
+}
+
+
+
+
+.header {
+    height: 70px;
+    /* background-color: aqua; */
+    border-bottom: 1px solid rgb(82, 82, 82);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 200px;
+    align-items: flex-start;
+}
+
+.language {
+    color: white;
+    margin-top: 10px;
+}
+
+.canvas {
+    /* background-color: azure; */
+    height: calc(100vh - 160px);
+    position: relative;
+}
+
+.chatting {
+    padding: 20px;
+    overflow-y: auto;
+    /* overflow-x: inherit; */
+    height: calc(100vh - 160px);
+}
+
+.userChat {
+    background-color: #2a3742;
+    display: flex;
+    padding: 5px;
+    align-items: flex-start;
+    padding-left: 100px;
+    padding-right: 150px;
+    width: 100%;
+    /* margin: 5px; */
+}
+.aiReply {
+    background-color: #54606a;
+    display: flex;
+    padding: 5px;
+    align-items: flex-start;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 100%;
+
+}
+.userImage, .aiImage {
+    width: 50px;
+    height: 50px;
+}
+
+.userQuestion, .aiAnswer {
+    /* background-color: aqua; */
+    width: 100%;
+    overflow-wrap: break-word;
+    color: white;
+    margin: auto auto auto 13px;
+}
+
+.inputBlock {
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.query {
+    background-color: #1d262d;
+    display: flex;
+    height: 60px;
+    border-radius: 10px;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    background: none;
+    border: none;
+    /* outline: none; */
+    border-radius: 10px;
+    padding: 10px;
+    padding-right: 80px;
+    padding-left: 20px;
+    font-size: 15px;
+    color: white;
+}
+
+.queryButton {
+    background: none;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+    position: absolute;
+    right: 0;
+    height: 60px;
+    cursor: pointer;
+}
+
+#shortCuts {
+    /* background-color: blue; */
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    /* margin-top: 50px; */
+}
+
+.shortCut1, .shortCut2 {
+    display: flex;
+    /* padding-top: 10px; */
+    padding-left: 100px;
+    padding-right: 100px;
+    align-items: center;
+    /* margin-top: calc(100vh - 200px); */
+}
+
+.query1, .query2, .query3, .query4 {
+    background-color: #2a3742;
+    color: white;
+    border: 1px solid rgb(107, 107, 107);
+    padding: 10px;
+    margin: 2px;
+    width: 50%;
+    /* height: 30px; */
+    text-align: center;
+    border-radius: 5px;
+    font-size: 12px;
+    /* margin-top: calc(100vh - 250px); */
+}
+
+.query1:hover, .query2:hover, .query3:hover, .query4:hover {
+    background-color: #1d262d;
+}
+
+.sendIcon {
+    margin-right: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* transform: translate(50%); */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #1d262d;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #fff;
+    width: 30%;
+    border-radius: 5px;
+    /* height: 50vh; */
+    text-align: center;
+    transform: translate(0%, 50%);
+    /* color: black; */
+}
+
+.modal-content-login {
+    background-color: #1d262d;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #fff;
+    width: 30%;
+    border-radius: 5px;
+    /* height: 50vh; */
+    text-align: center;
+    transform: translate(0%, 50%);
+    /* align-items: center;
+    text-align: center; */
+}
+
+.googleImage {
+    width: 20px;
+    margin-right: 20px;
+}
+
+h3 {
+    color: white;
+    /* background-color: aqua; */
+    margin-bottom: 20px;
+    /* font-size: 20; */
+}
+
+#bookDetailsInput {
+    margin-top: 15px;
+    padding: 5px;
+    border: 1px solid white;
+}
+#googleLoginButton {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transform: translate(35%);
+}
+
+#input2, #input3 {
+    color: white;
+    margin: 2px;
+}
+
+/* ========= */
+
+.loadingMessage{
+    margin-left: 84px;
+    color: white;
+    font-size: initial;
+}
+
+#active{
+    background-color: #5c6164;
+    border-radius: 8px;
+}
